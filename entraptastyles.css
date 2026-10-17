@@ -1,0 +1,205 @@
+:root {
+    --entrapta-pale-pink: #eedcdc;
+    --entrapta-peach: #e0997b;
+    --entrapta-terracotta: #d68871;
+    --entrapta-hot-pink: #e12967;
+    --entrapta-mauve: #b1749e;
+    --entrapta-plum: #602f45;
+    --entrapta-dark-plum: #3e2332;
+}
+body{
+    font-family: Shera, sans-serif;
+    background-color: var(--entrapta-plum);
+    background-repeat: no-repeat;
+    background-size: auto;
+    font-size: large;
+
+}
+@font-face {
+    font-family: Shera;
+    src: url('assets/fonts/Shera-MqWe.ttf') format('truetype');
+}
+#header{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+img {
+    height: 250px;
+}
+#titlecard{
+    max-width: 600px;
+    height: auto;
+}
+#Navi{
+    display: flex;
+    font-size: larger;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+}
+#putgridhere{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: repeat(2, 1fr) min-content ;
+    gap: 20px;
+    grid-template-areas: 
+    "Picture Portfolio"
+    "AboutMe Portfolio"
+    "AboutMe Contact";
+    padding: 5%;
+}
+.entrapta{
+    grid-area: Picture;
+    background-color: var(--entrapta-dark-plum);
+    text-align: center;
+}
+.aboutme{
+    grid-area: AboutMe;
+    background-color: var(--entrapta-hot-pink);
+    text-align: center;
+    align-content: center;
+}
+.contact{
+    grid-area: Contact;
+    background-color: var(--entrapta-mauve);
+    text-align: center;
+    align-content: center;
+}
+.portfolio{
+    grid-area: Portfolio;
+    background-color: var(--entrapta-peach);
+    text-align: center;
+    align-content: center;
+}
+.title{
+    text-align: center;
+    font-size: larger;
+}
+.herosection{
+    background-image: url("assets/images/Dryl.webp");
+    height: 600px;
+    width: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 10%;
+}
+.herotext{
+    width: fit-content;
+    background-color: var(--entrapta-hot-pink);
+}
+.herotitle{
+    font-size: 1.5cm;
+}
+.footer{
+    background-color: var(--entrapta-terracotta);
+    text-align: end;
+}
+table, th, td {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+table {
+    border-collapse: collapse;
+}
+
+@media (max-width: 768px) {
+    #putgridhere {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+        "Picture"
+        "AboutMe"
+        "Portfolio"
+        "Contact";
+    padding: 3%;
+    gap: 10px;
+    }
+
+    #Navi {
+        max-width: 100%;
+        font-size: large;
+    }
+
+    #titlecard {
+        width: 100%;
+        height: auto;
+    }
+
+    .herosection {
+        height: 400px;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .herotitle {
+        font-size: 1.2cm;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    #putgridhere > * {
+        min-width: 0;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto; 
+    }
+
+    .portfolio {
+        overflow-x: auto;
+    }
+
+    .herotext {
+        width: fit-content;
+        max-width: 90%;
+        background-color: var(--entrapta-hot-pink);
+        padding: 8px 14px;
+    }
+
+    .herotext h2 {
+        font-size: 1rem;
+        font-weight: normal;
+        margin: 4px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: medium;
+    }
+
+    #Navi {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .herosection {
+        height: 300px;
+    }
+
+    .herotitle {
+        font-size: 1cm;
+    }
+
+    .herotext {
+        max-width: 100%;
+    }
+    .herotext h2 {
+        font-size: 0.85rem;
+    }
+}
